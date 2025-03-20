@@ -32,8 +32,8 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:4.11.0") // ✅ Correct syntax
-
+    implementation("com.squareup.okhttp3:okhttp:4.11.0") // dependency bruh
+    implementation ("io.socket:socket.io-client:2.0.1") // same dependency
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

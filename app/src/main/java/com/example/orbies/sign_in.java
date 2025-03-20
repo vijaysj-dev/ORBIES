@@ -39,15 +39,16 @@ public class sign_in extends AppCompatActivity {
 
     reqdata();
     }
+
+
     private void reqdata() {
         ProgressBar pb = findViewById(R.id.vanishpb);
         TextView tv = findViewById(R.id.assigned);
 
-
         pb.setVisibility(ProgressBar.VISIBLE);
 
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("https://node-s-bapm.vercel.app/").build();
+        Request request = new Request.Builder().url("https://node-s.vercel.app/").build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -66,7 +67,7 @@ public class sign_in extends AppCompatActivity {
                         pb.setVisibility(ProgressBar.GONE);
 
                         try {
-                            tv.setText("Response: " + response.body().string());
+                            tv.setText(response.body().string());
 
                             Intent int_next = new Intent(sign_in.this, MainActivity.class);
                             new Handler().postDelayed(new Runnable() {
@@ -76,7 +77,7 @@ public class sign_in extends AppCompatActivity {
                                             int_next
                                     );
                                 }
-                            },2000);
+                            },4000);
 
                         } catch (IOException e) {
                             throw new RuntimeException(e);
